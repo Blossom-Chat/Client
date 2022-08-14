@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100vh; margin: 0;">
+    <input type="file" id="file" name="file"/>
+    <output></output>
+</body>
+
+<style>
+    body > * {
+        margin: 1em;
+    }
+
+    output {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    output > * {
+        max-height: 50vh;
+        max-width: 50vw;
+        display: block;
+    }
+</style>
+
+<script src="src/js/dependencies/jquery.min.js"></script>
+
+<script>
+    $('#file').change(function () {
+            const file = this.files[0]
+            if (file) {
+                let reader = new FileReader()
+                reader.onload = function (event) {
+                    console.log(event.target.result)
+                    $('output').empty()
+                    switch(file.type.split('/')[0]) {
+                        case 'image':
+                            $('output').append($('<img>').attr('src', event.target.result)).append($('<a>').attr('href', event.target.result).attr('download', file.name).text(file.name))
+                            break
+                        case 'video':
+                            $('output').append($('<video controls>').attr('src', event.target.result)).append($('<a>').attr('href', event.target.result).attr('download', file.name).text(file.name))
+                            break
+                        case 'audio':
+                            $('output').append($('<audio controls><source>').attr('src', event.target.result)).append($('<a>').attr('href', event.target.result).attr('download', file.name).text(file.name))
+                            break
+                        default:
+                            $('output').append($('<a>').attr('href', event.target.result).attr('download', file.name).text(file.name))
+                            break
+                    }
+                }
+                reader.readAsDataURL(file)
+            }
+        })
+</script>
+
+</html>

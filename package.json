@@ -1,0 +1,42 @@
+{
+  "name": "blossom",
+  "productName": "Blossom",
+  "version": "0.2.0",
+  "description": "A simple chat app, inspired by discord",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build -w"
+  },
+  "repository": "https://github.com/Blossom/Blossom-Client",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "KontrollFreek <kontrollfreekwastaken@gmail.com>",
+  "license": "CC0-1.0",
+  "build": {
+    "appId": "com.blossom.app",
+    "win": {
+      "target": "portable"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "deb"
+    },
+    "portable": {
+      "unicode": false,
+      "artifactName": "Blossom.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^19.0.10",
+    "electron-builder": "^23.3.3"
+  },
+  "dependencies": {}
+}

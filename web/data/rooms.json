@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Home",
+        "emote": "🏠",
+        "users": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "name": "Really fucking long name for a room",
+        "emote": "🤯",
+        "users": [
+            "1",
+            "2",
+            "3"
+        ]
+    },
+    {
+        "name": "Another room",
+        "emote": "🔜",
+        "users": [
+            "1"
+        ]
+    }
+]

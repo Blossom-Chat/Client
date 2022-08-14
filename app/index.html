@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom</title>
+    <link rel="icon" href="../web/resources/512x512.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../web/resources/512x512.png">
+
+    <link rel="stylesheet" href="../web/css/actionbar.css">
+    <link rel="stylesheet" href="../web/css/main.css">
+
+</head>
+<body>
+    <!---->
+    <div class="action-bar">
+        <!---->
+        <span class="main">
+            <img class="logo" src="../web/resources/blossom.svg"> Blossom
+        </span>
+        <!---->
+        <span>
+            <!---->
+            <button class="minimize">
+                <svg width="12" height="12" viewBox="0 0 12 12">
+                    <rect fill="currentColor" width="10" height="1" x="1" y="6"></rect>
+                </svg>
+            </button>
+            <!---->
+            <button class="maximize">
+                <svg width="12" height="12" viewBox="0 0 12 12">
+                    <rect width="9" height="9" x="1.5" y="1.5" fill="none" stroke="currentColor"></rect>
+                </svg>
+            </button>
+            <!---->
+            <button class="close" onclick="window.close()">
+                <svg width="12" height="12" viewBox="0 0 12 12">
+                    <polygon fill="currentColor" fill-rule="evenodd"
+                        points="11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1">
+                    </polygon>
+                </svg>
+            </button>
+            <!---->
+        </span>
+        <!---->
+    </div>
+    <!---->
+    <iframe src="../web/index.html" style="width: 100vw; height: calc(100vh - 29px)" frameborder="0">
+    </iframe>
+</body>
+
+<script>
+    const { ipcRenderer } = require('electron')
+    const ipc = ipcRenderer
+
+    document.getElementsByClassName('minimize')[0].addEventListener('click', () => {
+        ipc.send('min')
+    })
+
+    document.getElementsByClassName('maximize')[0].addEventListener('click', () => {
+        ipc.send('max')
+    })
+</script>
+
+</html>

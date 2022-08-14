@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blossom Desktop</title>
+  <link rel="icon" href="resources/512x512.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="resources/512x512.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/actionbar.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+</head>
+
+<script src="./js/dependencies/color-thief.umd.js"></script>
+<script src="./js/dependencies/twemoji.min.js"></script>
+<script src="./js/dependencies/jquery.min.js"></script>
+<script src="./js/dependencies/sweetalert2.min.js"></script>
+
+<body>
+  <!---->
+  <div class="login">
+    <!---->
+    <div class="login-modal">
+      <!---->
+      <h1>Sign In</h1>
+      <!---->
+      <div class="seperator"></div>
+      <!---->
+      <span>
+        <h3>Username</h3>
+        <p class="l-error"><i class="bi bi-exclamation-triangle"></i> Login or password is invalid.</p>
+      </span>
+      <input type="text" id="l-user" class="e-login">
+      <!---->
+      <span>
+        <h3>Password</h3>
+        <p class="l-error"><i class="bi bi-exclamation-triangle"></i> Login or password is invalid.</p>
+      </span>
+      <input type="password" id="l-pass" class="e-login">
+      <!---->
+      <button class="login-submit" onclick="login()">Sign In</button>
+      <!---->
+      <div class="seperator"></div>
+      <!---->
+      <span class="login-register">Need an account? <span>Register</span></span>
+      <!---->
+    </div>
+    <!---->
+    <div class="register-modal">
+      <!---->
+      <h1>Sign Up</h1>
+      <!---->
+      <div class="seperator"></div>
+      <!---->
+      <h3>Username</h3>
+      <p class="r-error-exists r-error"><i class="bi bi-exclamation-triangle"></i> User already exists.</p>
+      <p class="r-error-u-empty r-error"><i class="bi bi-exclamation-triangle"></i> Username cannot be empty.</p>
+      <input type="text" id="r-user">
+      <!---->
+      <h3>Password</h3>
+      <p class="r-error-pass r-error"><i class="bi bi-exclamation-triangle"></i> Passwords do not match.</p>
+      <p class="r-error-p-empty r-error"><i class="bi bi-exclamation-triangle"></i> Password cannot be empty.</p>
+      <input type="password" id="r-pass" autocomplete="new-password" class="e-register-pass">
+      <!---->
+      <span>
+        <h3>Retype Password</h3>
+        <p class="r-error-pass r-error"><i class="bi bi-exclamation-triangle"></i> Passwords do not match.</p>
+      </span>
+      <input type="password" id="r-pass-check" autocomplete="new-password" class="e-register-pass">
+      <!---->
+      <button class="register-submit" onclick="register()">Sign Up</button>
+      <!---->
+      <div class="seperator"></div>
+      <!---->
+      <span class="register-login">Already have an account? <span>Sign In</span></span>
+      <!---->
+    </div>
+    <!---->
+    <div class="avatar-backdrop">
+      <!---->
+      <div class="avatar-modal">
+        <!---->
+        <h1>Choose an avatar</h1>
+        <!---->
+        <div class="a-list">
+          <button onclick="avatar(0, this)"><img src="./resources/avatar-upload.png" class="avatar">Upload</button>
+          <button onclick="avatar(1, this)" class="active"><img src="./resources/avatar-default.png" class="avatar">Default</button>
+        </div>
+        <!---->
+          <div class="a-interact">
+            <!---->
+            <label class="a-upload">
+              Upload
+              <input type="file" id="a-file" accept="image/*">
+            </label>
+            <div class="a-file-img-bg">
+              <img src="" class="a-file-img" alt="">
+            </div>
+            <!---->
+          </div>
+        <!---->
+        <div class="seperator"></div>
+        <!---->
+        <div class="a-buttons">
+          <button onclick="registerback()">Back</button>
+          <button onclick="registersubmit()" >Submit</button>
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <!---->
+  </div>
+  <!---->
+</body>
+
+<script src="js/main.js"></script>
+<script src="js/login.js"></script>
+
+<script>
+  $(".login").hide()
+  $(".register-modal").hide()
+  $(".avatar-backdrop").hide()
+  $(".avatar-modal").hide()
+  $("p").hide()
+  $(".a-interact").hide()
+  $(".login").css('background-image', `url("./resources/background${Math.floor(Math.random() * 5)}.jpg")`)
+  $('.a-file-img').attr('src', `./resources/defaultavatars/${Math.floor(Math.random() * 4)}.png`)
+
+  setTimeout(function () {
+    $(".login").fadeIn(1000)
+      setTimeout(function () {
+        $(".login-modal").css('transform', 'scale(1)')
+        $(".login-modal").css('opacity', '1')
+    }, 300)
+  }, 500)
+
+  $('.login-register span').on('click', function () {
+    $(".login-modal").css('transform', 'scale(0.5)')
+    $(".login-modal").css('opacity', '0')
+    setTimeout(function () {
+      $(".login-modal").hide()
+      $('input').val('')
+    }, 300)
+    setTimeout(function () {
+      $(".register-modal").show()
+      $(".register-modal").css('transform', 'scale(1)')
+      $(".register-modal").css('opacity', '1')
+    }, 300)
+  })
+
+  $('.register-login span').on('click', function () {
+    $(".register-modal").css('transform', 'scale(0.5)')
+    $(".register-modal").css('opacity', '0')
+    setTimeout(function () {
+      $(".register-modal").hide()
+      $('input').val('')
+    }, 300)
+    setTimeout(function () {
+      $(".login-modal").show()
+      $(".login-modal").css('transform', 'scale(1)')
+      $(".login-modal").css('opacity', '1')
+    }, 300)
+  })
+</script>
+
+</html>

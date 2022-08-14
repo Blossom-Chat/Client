@@ -1,0 +1,235 @@
+p {
+    font-size: 70%;
+    color: var(--do-not-disturb);
+    display: inline-block;
+    margin: 0;
+}
+
+h1,
+h3 {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+input[type="text"],
+input[type="password"] {
+    appearance: none;
+    resize: none;
+    height: 1em;
+    padding: .5em;
+    border: 0;
+    border-radius: 5px;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 110%;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: 1px solid var(--bg-teritary);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input.error {
+    outline: 1px solid var(--do-not-disturb);
+}
+
+button {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+button:active {
+    filter: brightness(.8);
+}
+
+.seperator {
+    width: 100%;
+    height: 1px;
+    background-color: var(--select);
+    margin: 30px 0;
+}
+
+.active {
+    outline: 1px solid var(--accent-primary);
+}
+
+.a-upload {
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 40px;
+    font-size: 15px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    display: block;
+    position: relative;
+}
+
+.a-file-img-bg {
+    width: 80px;
+    height: 80px;
+    background-color: var(--bg-teritary);
+    border-radius: 5px;
+    margin: 5px 15px 0px 15px;
+}
+
+.a-file-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+    background-color: var(--bg-teritary);
+}
+
+.a-upload:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+.a-upload:active {
+    filter: brightness(.8);
+}
+
+.a-buttons > button {
+    padding: 10px 50px;
+    margin: 0 10px;
+}
+
+.login {
+    width: var(--width);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.avatar-backdrop {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0007;
+    transition: 300ms;
+    opacity: 0;
+}
+
+.login-modal, .register-modal, .avatar-modal {
+    width: 35%;
+    min-width: 360px;
+    margin: 10px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    padding: 30px;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    transition: 300ms;
+    transform: scale(0.5);
+    opacity: 0;
+}
+
+.avatar-modal {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-modal button {
+    left: 0;
+    transform: translateX(0);
+}
+
+.avatar-modal > .a-list,
+.avatar-modal > .a-interact,
+.avatar-modal > .a-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-modal > .a-list > button {
+    width: 200px;
+    height: 220px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-modal > .a-list > button > .avatar {
+    width: 180px;
+    height: 180px;
+    margin: 0 0 5px 0;
+    border-radius: 5px;
+    background-color: var(--bg-teritary);
+}
+
+.login-register, .register-login {
+    color: var(--text-secondary);
+    font-size: 90%;
+}
+
+.login-submit, .register-submit {
+    width: 50%;
+    padding: 10px;
+}
+
+.login-register span, .register-login span {
+    color: var(--accent-primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-register span:hover, .register-login span:hover {
+    text-decoration: underline;
+}
+
+.login-register span:active, .register-login span:active {
+    color: var(--accent-secondary);
+}

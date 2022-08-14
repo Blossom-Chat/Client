@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blossom Desktop</title>
+  <link rel="icon" href="../resources/512x512.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="resources/512x512.png">
+  <link rel="stylesheet" href="../css/chat.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/rooms.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/users.css">
+</head>
+
+<script src="../js/dependencies/color-thief.umd.js"></script>
+<script src="../js/dependencies/twemoji.min.js"></script>
+<script src="../js/dependencies/jquery.min.js"></script>
+
+<body>
+  <!---->
+  <div class="room-bar">
+    <!---->
+    <div room="1" class="">
+      <div class="room-emote">🏠</div>
+      <div>
+        <span class="room-name">Home</span>
+        <span class="room-last-sent"></span>
+      </div>
+    </div>
+    <!---->
+    <div room="2" class="selected">
+      <div class="room-emote">🤯</div>
+      <div>
+        <span class="room-name">Really fucking long name for a room</span>
+        <span class="room-last-sent">third ☹</span>
+      </div>
+    </div>
+    <div room="3" class="">
+      <div class="room-emote">🔜</div>
+      <div>
+        <span class="room-name">Another room</span>
+        <span class="room-last-sent">lol</span>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <!---->
+  <div class="chat">
+    <!---->
+    <div class="chat-feed">
+      <!---->
+      <div class="feed-message">
+        <div class="message-column-side">
+            <img class="message-profile-picture" src="https://cdn.discordapp.com/avatars/810286298451148820/0cf8907fa81b6d953d48b5e67f0a0f18.webp?size=2048" alt="">
+        </div>
+        <div class="message-column-main">
+          <div class="message-username">
+            <h4>Ryker</h4><h5>6:18</h5><h6>PM</h6>
+          </div>
+          <div class="message-content">
+            <p>first</p>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="feed-message">
+        <div class="message-column-side">
+          <img class="message-profile-picture"
+            src="https://cdn.discordapp.com/avatars/812914121741041664/26b5d3bf071b6c11ca741eda015ca86c.webp?size=2048"
+            alt="">
+        </div>
+        <div class="message-column-main">
+          <div class="message-username">
+            <h4>Blueberryy</h4><h5>6:58</h5><h6>PM</h6>
+          </div>
+          <div class="message-content">
+            <p>Second</p>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="feed-message">
+        <div class="message-column-side">
+          <img class="message-profile-picture"
+            src="https://cdn.discordapp.com/avatars/506101469787717658/ce9e35a5dd5d819911ebb6f19f408ae0.webp?size=2048"
+            alt="">
+        </div>
+        <div class="message-column-main">
+          <div class="message-username">
+            <h4>KontrollFreek</h4><h5>6:58</h5><h6>PM</h6>
+          </div>
+          <div class="message-content">
+            <p>third ☹</p>
+          </div>
+        </div>
+      </div>
+      <!---->
+    </div>
+    <!---->
+    <div class="chat-input-frame">
+      <div contentEditable class="chat-input" oninput="text(this)"></div>
+      <button class="chat-send" id="chat-send">
+        <img src="../resources/send.png" alt="Send">
+      </button>
+    </div>
+    <!---->
+  </div>
+  <!---->
+  <div class="user-bar">
+    <!---->
+    <div user="1" class="idle">
+      <span class="user-profile-picture"><img
+          src="https://cdn.discordapp.com/avatars/506101469787717658/ce9e35a5dd5d819911ebb6f19f408ae0.webp?size=2048"
+          alt=""></span>
+      <div>
+        <span class="user-username">KontrollFreek</span>
+        <span class="user-status"></span>
+      </div>
+    </div>
+    <!---->
+    <div user="2" class="online">
+      <span class="user-profile-picture"><img
+          src="https://cdn.discordapp.com/avatars/810286298451148820/0cf8907fa81b6d953d48b5e67f0a0f18.webp?size=2048"
+          alt=""></span>
+      <div>
+        <span class="user-username">Ryker</span>
+        <span class="user-status"></span>
+      </div>
+    </div>
+    <!---->
+    <div user="3" class="do-not-disturb">
+      <div class="user-profile-picture"><img
+          src="https://cdn.discordapp.com/avatars/812914121741041664/26b5d3bf071b6c11ca741eda015ca86c.webp?size=2048"
+          alt="">
+      </div>
+      <div>
+        <span class="user-username">Blueberryy</span>
+        <span class="user-status"></span>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <!---->
+</body>
+
+<script src="../js/main.js"></script>
+<script src="../js/text-handler.js"></script>
+<script src="../js/populate.js"></script>
+
+<script>$('*').on('load', function() { twemoji.parse(document.body) })</script>
+
+</html>

@@ -1,0 +1,74 @@
+.action-bar {
+  font-size: 12px;
+  background-color: var(--bg-primary);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 29px;
+  width: var(--width);
+  -webkit-app-region: drag;
+  z-index: 100;
+}
+
+.action-bar * {
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.action-bar span {
+  display: flex;
+}
+
+.action-bar .main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-bar .main .logo {
+  margin: 0 7px;
+  width: 20px;
+  height: 20px;
+}
+
+.action-bar button {
+  z-index: 1;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 29px;
+  border: none;
+  -webkit-app-region: no-drag;
+  border-radius: 0;
+}
+
+.action-bar button:hover {
+  background-color: rgba(255, 255, 255, 0.1019607843);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.action-bar button:active {
+  background-color: rgba(255, 255, 255, 0.1647058824);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.action-bar button.close:hover {
+  background-color: #ff3333;
+  transition: 100ms;
+  color: #fff;
+}
+
+.action-bar button.close:active {
+  color: #fff;
+}

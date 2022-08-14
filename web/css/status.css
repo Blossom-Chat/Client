@@ -1,0 +1,49 @@
+.user-bar > *.online {
+    border-left: var(--online) 0px solid;
+}
+
+.user-bar > *.online > * > .user-status:after {
+    content: "Online";
+}
+
+.user-bar > *.online:hover {
+    border-left: var(--online) 7px solid;
+}
+
+.user-bar > *.idle {
+    border-left: var(--idle) 0px solid;
+}
+
+.user-bar > *.idle > * > .user-status:after {
+    content: "Idle";
+}
+
+.user-bar > *.idle:hover {
+    border-left: var(--idle) 7px solid;
+}
+
+.user-bar > *.do-not-disturb {
+    border-left: var(--do-not-disturb) 0px solid;
+}
+
+.user-bar > *.do-not-disturb > * > .user-status:after {
+    content: "Do Not Disturb";
+}
+
+.user-bar > *.do-not-disturb:hover {
+    border-left: var(--do-not-disturb) 7px solid;
+}
+
+.user-bar > *.offline {
+    border-left: var(--offline) 0px solid;
+    filter: grayscale(100%);
+}
+
+.user-bar > *.offline > * > .user-status:after {
+    content: "Offline";
+}
+
+.user-bar > *.offline:hover {
+    border-left: var(--offline) 7px solid;
+    filter: grayscale(0%);
+}

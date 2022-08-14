@@ -1,0 +1,56 @@
+.user-bar {
+    display: flex;
+    flex-flow: column;
+    background-color: var(--bg-secondary);
+    height: calc(var(--height) - 10px);
+    width: 250px;
+    right: 0;
+    position: absolute;
+    padding: 5px 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.user-bar > * {
+    margin: 10px 15px;
+    width: 200px;
+    height: 40px;
+    padding: 7px 10px;
+    transition: 150ms;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.user-bar > *:hover {
+    background-color: var(--highlight);
+    width: 193px;
+}
+
+.user-bar > * > .user-profile-picture,
+.user-bar > * > .user-profile-picture > img {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: var(--highlight)
+}
+
+.user-bar > * > * > .user-username {
+    display: block;
+    font-weight: 700;
+}
+
+.user-bar > * > * > .user-status {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    font-size: 80%;
+    text-transform: capitalize;
+}

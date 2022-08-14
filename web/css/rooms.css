@@ -1,0 +1,92 @@
+.room-bar {
+    display: flex;
+    flex-flow: column;
+    background-color: var(--bg-secondary);
+    height: calc(var(--height) - 10px);
+    width: 250px;
+    left: 0;
+    position: absolute;
+    padding: 5px 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.room-bar::-webkit-scrollbar {
+    width: 0;
+}
+
+.room-bar > * {
+    margin: 10px 15px;
+    width: 200px;
+    height: 40px;
+    padding: 7px 10px;
+    transition: 150ms;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transform: translateX(0px)
+}
+
+.room-bar > *:hover {
+    background-color: var(--bg-teritary);
+    transform: translateX(5px);
+    border-radius: 5px 0 0 5px;
+    width: 210px;
+}
+
+.room-bar > * > .room-emote {
+    width: 40px;
+    height: 40px;
+    transform: rotate(0deg);
+    transition: 150ms ease;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-bar > * > .room-emote > img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0;
+    vertical-align: -6px;
+}
+
+.room-bar > *:hover > .room-emote {
+    transform: rotate(10deg);
+}
+
+.room-bar > *.selected {
+    background-color: var(--select);
+}
+
+.room-bar > * > div {
+    transform: translateX(10px);
+}
+
+.room-bar > * > * > .room-name {
+    width: 155px;
+    display: block;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 80%;
+}
+
+.room-bar > * > * > .room-last-sent {
+    width: 155px;
+    display: block;
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 70%;
+}
