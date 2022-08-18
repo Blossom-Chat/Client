@@ -17,7 +17,6 @@
     "demo"
   ],
   "author": "KontrollFreek <kontrollfreekwastaken@gmail.com>",
-  "license": "CC0-1.0",
   "build": {
     "appId": "com.blossom.app",
     "win": {
