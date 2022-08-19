@@ -45,6 +45,8 @@
 
 .chat > .chat-feed > .feed-message > .message-column-side {
     width: 70px;
+    flex-shrink: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,6 +65,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-grow: 1;
+    padding-right: 20px;
 }
 
 .chat > .chat-feed > .feed-message > .message-column-main > .message-username {

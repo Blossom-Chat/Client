@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Blossom Desktop</title>
+  <title>Blossom</title>
   <link rel="icon" href="resources/512x512.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="resources/512x512.png">
   <link rel="stylesheet" href="css/main.css">
@@ -119,52 +119,5 @@
 
 <script src="js/main.js"></script>
 <script src="js/login.js"></script>
-
-<script>
-  $(".login").hide()
-  $(".register-modal").hide()
-  $(".avatar-backdrop").hide()
-  $(".avatar-modal").hide()
-  $("p").hide()
-  $(".a-interact").hide()
-  $(".login").css('background-image', `url("./resources/background${Math.floor(Math.random() * 5)}.jpg")`)
-  $('.a-file-img').attr('src', `./resources/defaultavatars/${Math.floor(Math.random() * 4)}.png`)
-
-  setTimeout(function () {
-    $(".login").fadeIn(1000)
-      setTimeout(function () {
-        $(".login-modal").css('transform', 'scale(1)')
-        $(".login-modal").css('opacity', '1')
-    }, 300)
-  }, 500)
-
-  $('.login-register span').on('click', function () {
-    $(".login-modal").css('transform', 'scale(0.5)')
-    $(".login-modal").css('opacity', '0')
-    setTimeout(function () {
-      $(".login-modal").hide()
-      $('input').val('')
-    }, 300)
-    setTimeout(function () {
-      $(".register-modal").show()
-      $(".register-modal").css('transform', 'scale(1)')
-      $(".register-modal").css('opacity', '1')
-    }, 300)
-  })
-
-  $('.register-login span').on('click', function () {
-    $(".register-modal").css('transform', 'scale(0.5)')
-    $(".register-modal").css('opacity', '0')
-    setTimeout(function () {
-      $(".register-modal").hide()
-      $('input').val('')
-    }, 300)
-    setTimeout(function () {
-      $(".login-modal").show()
-      $(".login-modal").css('transform', 'scale(1)')
-      $(".login-modal").css('opacity', '1')
-    }, 300)
-  })
-</script>
 
 </html>

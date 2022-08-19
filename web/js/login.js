@@ -1,3 +1,59 @@
+$.get('http://173.94.229.0/Blossom%20Back%20End/users/login.php', {
+    user: localStorage.getItem('user'),
+    pass: localStorage.getItem('pass')
+}, function (data) {
+    switch (data.status) {
+        case 'success':
+            window.location.href = './home/index.html'
+            break;
+        case 'failed':
+            $(".login").hide()
+            $(".register-modal").hide()
+            $(".avatar-backdrop").hide()
+            $(".avatar-modal").hide()
+            $("p").hide()
+            $(".a-interact").hide()
+            $(".login").css('background-image', `url("./resources/background${Math.floor(Math.random() * 5)}.jpg")`)
+            $('.a-file-img').attr('src', `./resources/defaultavatars/${Math.floor(Math.random() * 4)}.png`)
+
+            setTimeout(function () {
+                $(".login").fadeIn(1000)
+                setTimeout(function () {
+                    $(".login-modal").css('transform', 'scale(1)')
+                    $(".login-modal").css('opacity', '1')
+                }, 300)
+            }, 500)
+
+            $('.login-register span').on('click', function () {
+                $(".login-modal").css('transform', 'scale(0.5)')
+                $(".login-modal").css('opacity', '0')
+                setTimeout(function () {
+                $(".login-modal").hide()
+                $('input').val('')
+                }, 300)
+                setTimeout(function () {
+                $(".register-modal").show()
+                $(".register-modal").css('transform', 'scale(1)')
+                $(".register-modal").css('opacity', '1')
+                }, 300)
+            })
+
+            $('.register-login span').on('click', function () {
+                $(".register-modal").css('transform', 'scale(0.5)')
+                $(".register-modal").css('opacity', '0')
+                setTimeout(function () {
+                $(".register-modal").hide()
+                $('input').val('')
+                }, 300)
+                setTimeout(function () {
+                $(".login-modal").show()
+                $(".login-modal").css('transform', 'scale(1)')
+                $(".login-modal").css('opacity', '1')
+                }, 300)
+            })
+    }
+})
+
 function login() {
     $('.l-error').hide()
     $('.e-login').removeClass('error');
@@ -10,6 +66,8 @@ function login() {
                 $(".login-modal").css('transform', 'scale(0.5)')
                 $(".login-modal").css('opacity', '0')
                 $(".login").fadeOut(300)
+                localStorage.setItem('user', $('#l-user').val())
+                localStorage.setItem('pass', $('#l-pass').val())
                 setTimeout(function () {
                     window.location.href = './home/index.html';
                 }, 300)
@@ -112,9 +170,10 @@ function registersubmit() {
     $.post('http://173.94.229.0/Blossom%20Back%20End/users/register.php', {
         user: $('#r-user').val(),
         pass: $('#r-pass').val(),
-        //TODO: https://canary.discord.com/channels/822510988409831486/884160453989765161/1007839930753482802
         avatar: aChoice == 0 ? $('.a-file-img').attr('src') : ''
     }, function (data) {
+        localStorage.setItem('user', $('#r-user').val())
+        localStorage.setItem('pass', $('#r-pass').val())
         data.status == 'success' ? window.location.href = './home/index.html' : ''
     })
 }

@@ -44,6 +44,10 @@
 .user-bar > * > * > .user-username {
     display: block;
     font-weight: 700;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 90%;
 }
 
 .user-bar > * > * > .user-status {
@@ -53,4 +57,7 @@
     color: var(--text-secondary);
     font-size: 80%;
     text-transform: capitalize;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
