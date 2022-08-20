@@ -1,5 +1,4 @@
 function rooms() {
-    $('.room-bar').html('')
     $.get('http://173.94.229.0/Blossom%20Back%20End/rooms/getRooms.php', {
         user: localStorage.getItem('user'),
         pass: localStorage.getItem('pass')
@@ -13,8 +12,8 @@ function rooms() {
                         <img src="${data.rooms[room].icon}" alt="">
                     </div>
                     <div>
-                        <span class="room-name">${data.rooms[room].name}</span>
-                        <span class="room-last-sent">${data.rooms[room].lastmessage}</span>
+                        <span class="room-name">${twemoji.parse(data.rooms[room].name)}</span>
+                        <span class="room-last-sent">${twemoji.parse(data.rooms[room].lastmessage)}</span>
                     </div>
                 </div>
             `)
@@ -25,8 +24,11 @@ function rooms() {
 }
 
 function select(id, elem) {
+    if ($(elem).hasClass('selected')) return
     $('.room').removeClass('selected')
     $(elem).addClass('selected')
+    $('.chat-feed').html('<div class="loading">Loading Messages</div>')
+    $('.user-bar').html('<div class="loading">Loading Users</div>')
     messages(id)
     users(id)
 }

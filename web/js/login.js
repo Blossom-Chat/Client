@@ -1,3 +1,13 @@
+$(".login").hide()
+$(".register-modal").hide()
+$(".avatar-backdrop").hide()
+$(".avatar-modal").hide()
+$("p").hide()
+$(".a-interact").hide()
+$(".login").css('background-image', `url("./resources/background${Math.floor(Math.random() * 5)}.jpg")`)
+$('.a-file-img').attr('src', `./resources/defaultavatars/${Math.floor(Math.random() * 4)}.png`)
+
+
 $.get('http://173.94.229.0/Blossom%20Back%20End/users/login.php', {
     user: localStorage.getItem('user'),
     pass: localStorage.getItem('pass')
@@ -7,15 +17,6 @@ $.get('http://173.94.229.0/Blossom%20Back%20End/users/login.php', {
             window.location.href = './home/index.html'
             break;
         case 'failed':
-            $(".login").hide()
-            $(".register-modal").hide()
-            $(".avatar-backdrop").hide()
-            $(".avatar-modal").hide()
-            $("p").hide()
-            $(".a-interact").hide()
-            $(".login").css('background-image', `url("./resources/background${Math.floor(Math.random() * 5)}.jpg")`)
-            $('.a-file-img').attr('src', `./resources/defaultavatars/${Math.floor(Math.random() * 4)}.png`)
-
             setTimeout(function () {
                 $(".login").fadeIn(1000)
                 setTimeout(function () {

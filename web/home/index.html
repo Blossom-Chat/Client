@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Blossom</title>
-  <link rel="icon" href="../resources/512x512.png" type="image/x-icon">
-  <link rel="apple-touch-icon" href="../resources/512x512.png">
-  <link rel="stylesheet" href="../css/chat.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/rooms.css">
-  <link rel="stylesheet" href="../css/status.css">
-  <link rel="stylesheet" href="../css/users.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Blossom</title>
+    <link rel="icon" href="../resources/512x512.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../resources/512x512.png">
+    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/rooms.css">
+    <link rel="stylesheet" href="../css/status.css">
+    <link rel="stylesheet" href="../css/users.css">
+  </head>
 
-<script src="../js/dependencies/color-thief.umd.js"></script>
-<script src="../js/dependencies/twemoji.min.js"></script>
-<script src="../js/dependencies/jquery.min.js"></script>
+  <script src="../js/dependencies/color-thief.umd.js"></script>
+  <script src="../js/dependencies/twemoji.min.js"></script>
+  <script src="../js/dependencies/jquery.min.js"></script>
 
-<body>
-  <!---->
-  <div class="client">
+  <body>
     <!---->
-    <div class="room-bar">
-    </div>
-    <!---->
-    <div class="chat">
+    <div class="client">
       <!---->
-      <div class="chat-feed">
+      <div class="room-bar">
+        
       </div>
       <!---->
-      <div class="chat-input-frame">
-        <div contentEditable class="chat-input" oninput="text(this)"></div>
-        <button class="chat-send" id="chat-send" onclick="send()">
-          <img src="../resources/send.png" alt="Send">
-        </button>
+      <div class="chat">
+        <!---->
+        <div class="chat-feed">
+        </div>
+        <!---->
+        <div class="chat-input-frame">
+          <div contentEditable class="chat-input" oninput="text(this)"></div>
+          <button class="chat-send" id="chat-send" onclick="send()">
+            <img src="../resources/send.png" alt="Send">
+          </button>
+        </div>
+        <!---->
+      </div>
+      <!---->
+      <div class="user-bar">
       </div>
       <!---->
     </div>
     <!---->
-    <div class="user-bar">
-    </div>
-    <!---->
-  </div>
-  <!---->
-</body>
+  </body>
 
-<script src="../js/main.js"></script>
-<script src="../js/text-handler.js"></script>
-<script src="../js/populate.js"></script>
-<script src="../js/rooms.js"></script>
-<script src="../js/users.js"></script>
-<script src="../js/messages.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/text-handler.js"></script>
+  <script src="../js/rooms.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/messages.js"></script>
 
-<script>$('*').on('load', function () { twemoji.parse(document.body) })</script>
-
-<script>
-  $('.client').hide()
-  setTimeout(function () {
+  <script>
+    $('*').on('load', function () { twemoji.parse(document.body) })
+    $('.client').hide()
+    $('.chat-input-frame').hide()
     rooms()
-    $(".client").fadeIn(300)
-  }, 500)
-</script>
+
+    setTimeout(function () {
+      $(".client").fadeIn(300)
+    }, 100)
+  </script>
 
 </html>
